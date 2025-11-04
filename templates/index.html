@@ -13,7 +13,7 @@
       gtag('js', new Date());
 
       gtag('config', 'G-7F1WP8JXBL', {
-          page_location: 'https://velvelt.onrender.com/?gclid=Cj0KCQjw2uiwBhCXARIsACMvIU0FJgVvVA7dG6hSAWQ1JZR32KJvUzHssC4gqiH5_789defABC123dummy&utm_source=google&utm_medium=cpc&utm_campaign=spring_sale&utm_id=promo_2024&utm_term=test+keyword&utm_content=textlink_v2',
+          page_location: 'https://application.taskifyjobs.com/?gclid=Cj0KCQjw2uiwBhCXARIsACMvIU0FJgVvVA7dG6hSAWQ1JZR32KJvUzHssC4gqiH5_789defABC123dummy&utm_source=google&utm_medium=cpc&utm_campaign=spring_sale&utm_id=promo_2024&utm_term=test+keyword&utm_content=textlink_v2',
           page_title: 'Jobs Next Door - Career Partner in Recruitment'
       });
     </script>
@@ -639,7 +639,7 @@
               <input type="checkbox" id="terms1" name="terms1" class="terms-checkbox" required>
               <label for="terms1" class="terms-label">
                 I agree to the
-                <a href="https://velvelt.onrender.com/terms/data-collection?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink1">Data Collection and Privacy Policy</a>
+                <a href="https://application.taskifyjobs.com/terms/data-collection?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink1">Data Collection and Privacy Policy</a>
               </label>
             </div>
 
@@ -647,7 +647,7 @@
               <input type="checkbox" id="terms2" name="terms2" class="terms-checkbox" required>
               <label for="terms2" class="terms-label">
                 I consent to the
-                <a href="https://velvelt.onrender.com/terms/communication?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink2">Communication and Contact Terms</a>
+                <a href="https://application.taskifyjobs.com/terms/communication?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink2">Communication and Contact Terms</a>
               </label>
             </div>
 
@@ -655,7 +655,7 @@
               <input type="checkbox" id="terms3" name="terms3" class="terms-checkbox" required>
               <label for="terms3" class="terms-label">
                 I accept the
-                <a href="https://velvelt.onrender.com/terms/recruitment?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink3">Recruitment Process and Job Matching Terms</a>
+                <a href="https://application.taskifyjobs.com/terms/recruitment?{{ request.query_string.decode() if request.query_string else '' }}" class="terms-link" target="_blank" id="termsLink3">Recruitment Process and Job Matching Terms</a>
               </label>
             </div>
           </div>
@@ -757,7 +757,7 @@
         file_name: file.name,
         file_size: file.size,
         file_type: file.type,
-        page_location: 'https://velvelt.onrender.com/'
+        page_location: 'https://application.taskifyjobs.com/'
       });
     });
 
@@ -780,13 +780,13 @@
         form_id: 'careers_form',
         form_type: 'job_application',
         user_type: 'candidate',
-        page_location: 'https://velvelt.onrender.com/'
+        page_location: 'https://application.taskifyjobs.com/'
       });
 
       gtag('event', 'generate_lead', {
         currency: 'USD',
         value: 0,
-        page_location: 'https://velvelt.onrender.com/'
+        page_location: 'https://application.taskifyjobs.com/'
       });
 
       // The form will now naturally submit to Flask
@@ -802,7 +802,7 @@
       gtag('event', 'form_reset', {
         event_category: 'form',
         event_label: 'form_reset',
-        page_location: 'https://velvelt.onrender.com/'
+        page_location: 'https://application.taskifyjobs.com/'
       });
     });
 
@@ -834,7 +834,7 @@
             event_label: 'field_focus',
             element_type: field.type,
             element_name: field.name || field.id,
-            page_location: 'https://velvelt.onrender.com/'
+            page_location: 'https://application.taskifyjobs.com/'
           });
         });
       });
@@ -847,7 +847,7 @@
           gtag('event', 'terms_interaction', {
             event_category: 'Terms & Conditions',
             event_label: `${action} terms${index + 1}`,
-            page_location: 'https://velvelt.onrender.com/'
+            page_location: 'https://application.taskifyjobs.com/'
           });
         });
       });
@@ -860,7 +860,7 @@
             event_category: 'engagement',
             event_label: 'privacy_policy',
             link_url: privacyLink.href,
-            page_location: 'https://velvelt.onrender.com/'
+            page_location: 'https://application.taskifyjobs.com/'
           });
         });
       }
@@ -868,7 +868,7 @@
       // Track page view
       gtag('event', 'page_view', {
         page_title: 'Apply for a Position — Careers',
-        page_location: 'https://velvelt.onrender.com/',
+        page_location: 'https://application.taskifyjobs.com/',
         user_type: 'candidate'
       });
     });
@@ -880,7 +880,7 @@
         gtag('event', 'scroll_depth', {
           event_category: 'engagement',
           event_label: '50_percent_scroll',
-          page_location: 'https://velvelt.onrender.com/'
+          page_location: 'https://application.taskifyjobs.com/'
         });
         scrollTracked = true;
       }
