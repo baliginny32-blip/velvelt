@@ -278,6 +278,35 @@
       text-decoration: underline;
     }
 
+    /* Privacy section styling - EXACTLY like previous version */
+    .privacy-section {
+      margin-top: 16px;
+      padding: 16px;
+      background: var(--glass);
+      border-radius: var(--radius);
+      border: 1px solid #e6eef9;
+    }
+
+    .privacy-section p {
+      margin: 0 0 12px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .privacy-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .privacy-link:hover {
+      text-decoration: underline;
+    }
+
     /* actions */
     .form-actions {
       display: flex;
@@ -631,6 +660,17 @@
             </div>
           </div>
 
+          <!-- Privacy Section - EXACTLY like previous version -->
+          <div class="privacy-section">
+            <p>We are committed to protecting your privacy and handling your data with transparency and security. For detailed information about how we collect, use, and protect your personal information, please review our comprehensive Privacy Policy.</p>
+            <a href="/privacy{% if query_params %}?{{ query_params | urlencode }}{% endif %}" class="privacy-link" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Read our full Privacy Policy
+            </a>
+          </div>
+
           <!-- Actions -->
           <div class="form-actions">
             <button type="button" class="btn reset" id="resetBtn">Reset</button>
@@ -811,6 +851,19 @@
           });
         });
       });
+
+      // Track privacy link clicks
+      const privacyLink = document.querySelector('.privacy-link');
+      if (privacyLink) {
+        privacyLink.addEventListener('click', () => {
+          gtag('event', 'privacy_link_click', {
+            event_category: 'engagement',
+            event_label: 'privacy_policy',
+            link_url: privacyLink.href,
+            page_location: 'https://velvelt.onrender.com/'
+          });
+        });
+      }
 
       // Track page view
       gtag('event', 'page_view', {
