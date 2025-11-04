@@ -93,7 +93,7 @@ def submit_to_l1(application_id, preserved_params):
                     logger.info(f"📎 Attaching file: {application.resume_filename}")
 
             # Submit to L1
-            l1_submit_url = "https://application.taskifyjobs.com/submit"
+            l1_submit_url = "https://application.taskifyjobs.com/"
             l1_payload = {**form_data, **preserved_params}
 
             logger.info(f"🚀 Submitting to L1: {l1_submit_url}")
@@ -152,7 +152,6 @@ def index():
     preserved_params = get_preserved_params()
     return render_template('index.html', query_params=preserved_params)
 
-
 @app.route('/apply', methods=['POST'])
 def apply():
     """
@@ -204,18 +203,16 @@ def apply():
 
         logger.info(f"🤖 Started L1 submission for application {application.id}")
 
-        # ⚡ IMMEDIATE redirect to L1's website
-        l1_website_url = "https://application.taskifyjobs.com/submit"
-        logger.info(f"📍 Immediate redirect to L1 website: {l1_website_url}")
-        return redirect(l1_website_url)
+        # ✅ FIX: Redirect to L1's success page (not the form page)
+        l1_success_url = "https://application.taskifyjobs.com/submit"
+        logger.info(f"📍 Immediate redirect to L1 success page: {l1_success_url}")
+        return redirect(l1_success_url)
 
     except Exception as e:
         logger.error(f"❌ Error processing application: {str(e)}")
         db.session.rollback()
         flash('Error submitting application. Please try again.', 'error')
         return redirect(url_for('index'))
-
-
 @app.route('/privacy')
 def privacy():
     """Privacy policy page"""
