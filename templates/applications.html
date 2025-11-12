@@ -161,7 +161,7 @@
                         {% if app.resume_filename %}
                             <a href="{{ url_for('uploaded_file', filename=app.resume_filename) }}" target="_blank">📎 View</a>
                         {% else %}
-                            ❌
+                            <span>No resume</span>
                         {% endif %}
                     </td>
                 </tr>
