@@ -133,18 +133,9 @@ def reset_database():
 
 # Initialize database
 with app.app_context():
-    reset_database()
+    db.create_all()  # Only create tables if they don't exist
     logger.info(f"✅ L2 connected to database: {DB_PATH}")
-# --- SIMPLE IP ROTATION SYSTEM ---
-# def get_current_ip():
-#     """Get the current public IP address"""
-#     try:
-#         response = requests.get('https://api.ipify.org?format=json', timeout=5)
-#         if response.status_code == 200:
-#             return response.json().get('ip', 'Unknown')
-#     except:
-#         pass
-#     return 'Unknown'
+
 def get_preserved_params():
     params = {}
     for key, value in request.args.items():
